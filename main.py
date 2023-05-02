@@ -1,18 +1,15 @@
 from linkedinScp import LinkedIn 
 import pandas as pd
 
-# email = "kamaldalakoti90@gmail.com" #set username
-   
-# password = "Kamal@1551" #set password
 
-email = "rpanchal3101@gmail.com" #set username
+email = "your email" #set username
    
-password = "e_mc.square" #set password
+password = "yoy password" #set password
 
 # target_profile = "https://www.linkedin.com/in/tufayel-ahmed-cse/" #set target profile url
 target_profile = f"https://www.linkedin.com/in/"
 
-df = pd.read_csv("linkedinConList.csv")
+df = pd.read_csv("/data/linkedinConList.csv")
 
 client = LinkedIn()
 if client.login(email, password):
@@ -33,7 +30,7 @@ if client.login(email, password):
 
     # df = pd.DataFrame(profile_list)
     df['email'] = profile_list
-    df.to_csv('linkedinConList_email.csv',index=False)    
+    df.to_csv('/data/linkedinConList_email.csv',index=False)    
 else:
     print("Login Failed, please recheck login credentials")
 
